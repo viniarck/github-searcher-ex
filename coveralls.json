@@ -1,0 +1,11 @@
+{
+  "skip_files": [
+    "lib/github_web/views/",
+    "lib/github_web/endpoint.ex",
+    "lib/github_web/telemetry.ex",
+    "lib/github/client.ex",
+    "lib/github_web/router.ex",
+    "test/",
+    "lib/github/application.ex"
+  ]
+}

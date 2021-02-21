@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+  db:
+    container_name: db
+    image: postgres:13.0-alpine
+    # restart: always
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_pw
+      POSTGRES_DB: app_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 8080:4000
+
+volumes:
+  postgres_data:
+
+volumes:
+  postgres_data:
